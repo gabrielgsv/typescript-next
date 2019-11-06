@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../actions/todos";
+import { addTodo } from "../store/actions/todos";
 import Todos from "../components/todo/Todos";
 import "./index.css";
 
