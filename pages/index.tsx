@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../actions/todos";
-import Todos from "../components/Todos";
+import Todos from "../components/todo/Todos";
+import "./index.css";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -13,20 +14,23 @@ const Home = () => {
     dispatch(addTodo(value));
   };
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <form>
-        <input
-          type="text"
-          value={value}
-          onChange={e => setValue(e.target.value)}
-        />
-        <button type="submit" onClick={e => onSubmit(e)}>
-          Adicionar
-        </button>
-      </form>
-      <Todos />
+    <div className="container">
+      <div className="content">
+        <form>
+          <div className="inputButton">
+          <input
+            className="input"
+            type="text"
+            value={value}
+            onChange={e => setValue(e.target.value)}
+          />
+          <button className="button" type="submit" onClick={e => onSubmit(e)}>
+            Adicionar
+          </button>
+          </div>
+        </form>
+        <Todos />
+      </div>
     </div>
   );
 };
